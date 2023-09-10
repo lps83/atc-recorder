@@ -43,7 +43,7 @@ Make sure Docker is up and humming on your machine. 🖥️
    git clone https://github.com/lps83/atc-recorder.git
    cd atc-recorder```
 
-2. **Build the Docker image:**:
+2. **Build the Docker image:**
     ```docker build -t atc_recorder .```
 
 3. **Get the Recorder airborne:**:
@@ -52,14 +52,14 @@ Make sure Docker is up and humming on your machine. 🖥️
     -e STREAM_DURATION=7200 \
     atc_recorder
     ```
+    
 ### 🛠️ Configurations
 
-STREAM_URL: Specify the live ATC communication stream's URL.
-STREAM_DURATION: Set your preferred recording duration (in seconds).
-DEBUG_MODE: Dive deep with logs and temporary files.
-SILENCE_THRESHOLD: Tweak the silence detection dB threshold.
-SILENCE_DURATION: Define what duration should qualify as silence.
-
+**STREAM_URL:** Specify the live ATC communication stream's URL.
+**STREAM_DURATION:** Set your preferred recording duration (in seconds).
+**DEBUG_MODE:** Dive deep with logs and temporary files.
+**SILENCE_THRESHOLD:** Tweak the silence detection dB threshold.
+**SILENCE_DURATION:** Define what duration should qualify as silence.
 
 ###  👏 Acknowledgements
 
