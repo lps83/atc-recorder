@@ -1,49 +1,69 @@
-ATC Recorder
+# 🎙️ ATC Recorder 🛩️
 
-The ATC Recorder is a tool designed to aid student pilots in enhancing their listening comprehension skills. It captures live aviation ATC communications and processes the recordings to remove silent periods, ensuring efficient review of communications without the unnecessary pauses.
+The **ATC Recorder** is a tool crafted to aid student pilots in enhancing their listening comprehension skills. 🎧 It captures live aviation ATC communications and processes the recordings to remove silent periods, ensuring a seamless and efficient review of communications without the drag of unnecessary pauses.
 
-Motivation
+## Table of Contents
 
-As an aspiring pilot, deciphering live ATC communications can pose a challenge due to the rapid pace and unique terminologies in play. Listening to these communications repeatedly can enhance comprehension over time. However, the extended periods of silence in between can make the exercise tedious. This tool is designed to optimize this training phase by offering condensed audio recordings free from the silent intervals.
+- [Motivation](#-motivation)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Usage](#-usage)
+  - [Prerequisites](#-prerequisites)
+  - [Setup & Running](#setup--running)
+- [Configurations](#-configurations)
+- [Acknowledgements](#-acknowledgements)
 
-Features
+## 🌟 Motivation
 
-Live Recording: Captures real-time ATC communication streams.
-Silence Removal: Automatically processes recordings to weed out silent periods.
-Dockerized Application: Guarantees consistent setup and execution across diverse environments.
-Customizable Parameters: Modify recording durations, silence thresholds, and debug options to your preference.
-Tech Stack
+For any aspiring pilot, deciphering live ATC communications can be a daunting task due to the swift pace and unique terminologies. By immersing oneself in these communications, comprehension can be enhanced over time. However, the extended silences can hamper this learning process. This tool comes to the rescue, offering crisp audio recordings free from silent stretches. 🚀
 
-Docker: For streamlined containerization and deployment.
-FFmpeg: Utilized for recording, processing, and segmenting audio streams.
-Bash: Powers the core script that coordinates the recording and processing phases.
-Usage
+## 🎉 Features
 
-Prerequisites
-Ensure Docker is up and running on your machine.
-Setup & Running
+- **Live Recording**: Grabs real-time ATC communication streams.
+- **Silence Removal**: Processes recordings, ensuring you only hear what's important.
+- **Dockerized Application**: Ensuring a hassle-free experience across all environments.
+- **Customizable Parameters**: Tailor your recording experience as per your needs.
 
-Clone the repository:
+## ⚙️ Tech Stack
 
-git clone 
+- **Docker**: For streamlined containerization and deployment. 🐳
+- **FFmpeg**: For all things audio – recording, processing, and segmentation. 🎵
+- **Bash**: The backbone script that drives the recording and processing. 🖥️
 
-docker build -t atc_recorder .
-Deploy the Recorder:
+## 🚀 Usage
 
-docker run -v /path/on/your/host:/workspace/output \
--e STREAM_URL=http://your-streaming-url-here \
-atc_recorder
+### 📋 Prerequisites
 
-Update the values of STREAM_URL as required.
+Make sure Docker is up and humming on your machine. 🖥️
 
-Configurations
-STREAM_URL: Specify the URL of the live ATC communication stream.
-STREAM_DURATION: Set the duration (in seconds) for each block of recording. Default is set to 7200 seconds (equivalent to 2 hours).
-DEBUG_MODE: Set to true to enable in-depth logs and maintain temporary files. Default is set to false.
-SILENCE_THRESHOLD: Modify the dB threshold to detect silence. Default threshold is -50dB.
-SILENCE_DURATION: Define the duration (in seconds) which should be classified as silence. Default is 10 seconds.
+### Setup & Running
 
-Acknowledgements
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/lps83/atc-recorder.git
+   cd atc-recorder```
 
-OpenAI's ChatGPT: Their invaluable guidance played a pivotal role in the development of this application. :) 
-The entire aviation community: For their unyielding dedication towards safety and effective training.
+2. **Build the Docker image:**:
+    ```docker build -t atc_recorder .```
+
+3. **Get the Recorder airborne:**:
+    ```docker run -v /path/on/your/host:/workspace/output \
+    -e STREAM_URL=http://your-streaming-url-here \
+    -e STREAM_DURATION=7200 \
+    atc_recorder
+    ```
+### 🛠️ Configurations
+
+STREAM_URL: Specify the live ATC communication stream's URL.
+STREAM_DURATION: Set your preferred recording duration (in seconds).
+DEBUG_MODE: Dive deep with logs and temporary files.
+SILENCE_THRESHOLD: Tweak the silence detection dB threshold.
+SILENCE_DURATION: Define what duration should qualify as silence.
+
+
+###  👏 Acknowledgements
+
+Huge shoutout to:
+
+**OpenAI's ChatGPT**: Their relentless support was pivotal in this venture. 🤖
+The entire aviation community: Flying high because of their dedication. 🛫
