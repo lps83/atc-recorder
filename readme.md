@@ -47,7 +47,8 @@ Make sure Docker is up and humming on your machine. 🖥️
     ```docker build -t atc_recorder .```
 
 3. **Get the Recorder airborne:**:
-    ```docker run -v /path/on/your/host:/workspace/output \
+    ```
+    docker run -v /path/on/your/host:/workspace/output \
     -e STREAM_URL=http://your-streaming-url-here \
     -e STREAM_DURATION=7200 \
     atc_recorder
@@ -60,10 +61,3 @@ Make sure Docker is up and humming on your machine. 🖥️
 **DEBUG_MODE:** Dive deep with logs and temporary files.
 **SILENCE_THRESHOLD:** Tweak the silence detection dB threshold.
 **SILENCE_DURATION:** Define what duration should qualify as silence.
-
-###  👏 Acknowledgements
-
-Huge shoutout to:
-
-**OpenAI's ChatGPT**: Their relentless support was pivotal in this venture. 🤖
-The entire aviation community: Flying high because of their dedication. 🛫
