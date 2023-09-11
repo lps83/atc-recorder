@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 # Avoiding user interaction with tzdata
 ENV DEBIAN_FRONTEND=noninteractive
 ENV STREAM_URL=http://
-ENV STREAM_DURATION=7200
+ENV STREAM_DURATION=28800
 
 RUN apt update && apt upgrade && apt-get install -y \
     ffmpeg \
