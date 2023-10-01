@@ -9,9 +9,9 @@ The **ATC Recorder** is a tool crafted to aid student pilots in enhancing their 
 - [Tech Stack](#-tech-stack)
 - [Usage](#-usage)
   - [Prerequisites](#-prerequisites)
-  - [Setup & Running](#setup--running)
+  - [Setup](#setup)
+  - [Running](#running)
 - [Configurations](#-configurations)
-- [Acknowledgements](#-acknowledgements)
 
 ## 🌟 Motivation
 
@@ -36,15 +36,28 @@ For any aspiring pilot, deciphering live ATC communications can be a daunting ta
 
 Make sure Docker is up and humming on your machine. 🖥️
 
-### Setup & Running
+### Setup
 
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/lps83/atc-recorder.git
-   cd atc-recorder```
+   ```
+    git clone https://github.com/lps83/atc-recorder.git
+    cd atc-recorder
+   ```
 
 2. **Build the Docker image:**
-    ```docker build -t atc_recorder .```
+    ```
+      docker build -t atc_recorder.
+    ```
+
+## 🐳 Dockerhub Image
+
+If you prefer not to build the image yourself, you can pull the pre-built Docker image directly from Dockerhub:
+
+    ```
+      docker pull lps83/atc-recorder:linux
+    ```
+
+### Running
 
 3. **Get the Recorder airborne:**:
     ```
@@ -56,8 +69,8 @@ Make sure Docker is up and humming on your machine. 🖥️
     
 ### 🛠️ Configurations
 
-**STREAM_URL:** Specify the live ATC communication stream's URL.
-**STREAM_DURATION:** Set your preferred recording duration (in seconds).
-**DEBUG_MODE:** Dive deep with logs and temporary files.
-**SILENCE_THRESHOLD:** Tweak the silence detection dB threshold.
-**SILENCE_DURATION:** Define what duration should qualify as silence.
+**STREAM_URL:** Specify the live ATC communication stream's URL.<br />
+**STREAM_DURATION:** Set your preferred recording duration (in seconds).<br />
+**DEBUG_MODE:** Dive deep with logs and temporary files.<br />
+**SILENCE_THRESHOLD:** Tweak the silence detection dB threshold.<br />
+**SILENCE_DURATION:** Define what duration should qualify as silence.<br />
