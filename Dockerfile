@@ -1,19 +1,21 @@
-FROM ubuntu:20.04
+FROM alpine:latest
 
-# Avoiding user interaction with tzdata
-ENV DEBIAN_FRONTEND=noninteractive
+# Set environment variables
 ENV STREAM_URL=http://
 ENV STREAM_DURATION=28800
 
-RUN apt update && apt upgrade && apt-get install -y \
+# Install necessary packages
+RUN apk update && apk add --no-cache \
     ffmpeg \
     gawk \
-    && rm -rf /var/lib/apt/lists/*
+    bash
 
 WORKDIR /workspace
 
+# Copy the script to the workspace
 COPY process_audio.sh /workspace/
 
+# Make the script executable
 RUN chmod +x /workspace/process_audio.sh
 
 ENTRYPOINT ["/workspace/process_audio.sh"]
